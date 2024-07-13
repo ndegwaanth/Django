@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/styles/style.css' %}">
+
+</head>
+<body>
+    <h1>information got from the form</h1>
+    <p>{{ data }}</p>
+    <h2>The amount of words submited</h2>
+    <p>{{ amount_words }}</p> 
+    <h3>Static </h3>
+    <img src="{% static 'assets/images/carimg.png' %}" alt="no image">
+</body>
+</html>

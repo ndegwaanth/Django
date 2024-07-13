@@ -1,0 +1,39 @@
+h1 {
+    color: blue;
+    font-size: large;
+    font-weight: bold;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+}
+
+.all-data {
+    display: flex;
+    align-content: space-between;
+    color: blue;
+    padding-left: 20px;
+    
+}
+.data1 {
+    padding-left: 20px;
+}
+.data2 {
+    padding-left: 20px;
+}
+.data3 {
+    padding-left: 20px;
+}
+header {
+    background-color: green;
+    margin-top: 0;
+    padding-top: 0;
+    height: 60px;
+    width: 100%;
+}
+button {
+    background-color: blue;
+    height: fit-content;
+    width: fit-content;
+}

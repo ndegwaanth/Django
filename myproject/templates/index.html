@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/styles/style.css' %}">
+    
+    <style>
+        header {
+    background-color: green;
+    margin-top: 0;
+    padding-top: 0;
+    height: 60px;
+    width: 100%;
+    }
+    button {
+        background-color: blue;
+        height: fit-content;
+        width: fit-content;
+        align-content: flex-end;
+        display: flex;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            {% if user.is_authenticated %}
+                <a href="logout"><button>logout</button></a>
+            {% else %}
+                <a href="login"><button>SignUp</button></a>
+            {% endif %}
+        </div>
+    </header>
+    <h1>This is you first car</h1>
+    <img src="https://images.unsplash.com/photo-1720709734276-cd14a216bcad?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="no image">
+    <h2>Profile information</h2>
+    <ul>
+        <li>Name: {{ name }}</li>
+        <li>Age: {{ age }}</li>
+        <li>School: {{ school }}</li>
+    </ul>
+    <form method="POST" action="counter">
+        {% csrf_token %}
+        <textarea name="words" id="" cols="40" rows="10"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>This is the data from the database</h2>
+    <div>
+        {% for items in feature %}
+            <ul class="all-data">
+                <li class="data1">{{items.id}}</li>
+                <li class="data2">{{items.name}}</li>
+                <li class="data3">{{items.details}}</li>
+            </ul>
+        {% endfor %}
+    </div>
+</body>
+</html>

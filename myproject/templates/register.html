@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h4 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sign Up Below</h1>
+    
+    {% for message in messages %}
+        <h4>{{message}}</h4>
+    {% endfor %}
+
+    <form method="POST" action="register">
+        {% csrf_token %}
+        <p>Username:</p>
+        <input type="text" name="username" />
+        <p>Emai:</p>
+        <input type="email" name="email" />
+        <p>Password:</p>
+        <input type="password" name="password" /><br><br>
+        <p>Comfirm the above Password:</p>
+        <input type="password" name="password2" /><br><br>
+        <input type="submit">
+    </form>   
+</body>
+</html>
